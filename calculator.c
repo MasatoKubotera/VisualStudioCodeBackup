@@ -287,7 +287,7 @@ int main(void){
             Result = Num[0];
 //----------------------------------------------------------------------------------------------------
         finish:
-            printf("The answer to the formula  : ");
+            printf("解  : ");
             
             /*式表示*/
             if(AnsFlag != 0)                                                            
@@ -317,21 +317,21 @@ int main(void){
 //----------------------------------------------------------------------------------------------------
         error:
             /*指定文字以外の場合など*/
-            printf("\nCannot be calculated!\n\n"); //計算することができません
+            printf("\n計算できません!\n\n");
             continue;
         error2:
             /*割れない場合*/
-            printf("\nCannot divide by 0!\n\n"); //0で除算できません
+            printf("\n0で除算できません!\n\n");
             continue;
         error3:
             /*存在しない*/
-            printf("\nValue does not exist!\n\n"); //値が存在しません
+            printf("\n値が存在しません!\n\n");
             continue;
 //----------------------------------------------------------------------------------------------------
         history:
             /*履歴表示*/
             if(HistoryCount == 0){
-                printf("There is no history to display.\n\n");
+                printf("表示できる履歴がありません。\n\n");
                 continue;
             }
 

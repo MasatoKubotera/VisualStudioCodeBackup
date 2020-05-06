@@ -2,22 +2,22 @@
 #include <stdio.h>
 #include <math.h>
 //---------------------------------------------------------------------------------------------------
-/*æ•°å¼å…¥åŠ›*/
+/*”®“ü—Í*/
 void FormulaInput(char *Str){
-    /*æ•°å¼ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„*/
-    printf("Please enter a formula or command : ");
+    /*”®‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢*/
+    printf("”®‚©ƒRƒ}ƒ“ƒh‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢ : ");
 
-    /*è‹±æ•°å­—ãƒ»è¨˜å· èª­ã¿è¾¼ã¿*/
+    /*‰p”šE‹L† “Ç‚İ‚İ*/
     unsigned int i = 0;
     do{
     	Str[i] = getchar();
     } while(Str[i++] != 0x0A); //0x0A:Ent
 
-    /*æ–‡å­—åˆ—ã®æœ€å¾Œã‚’å¿…ãš'='ã«ã™ã‚‹*/
+    /*•¶š—ñ‚ÌÅŒã‚ğ•K‚¸'='‚É‚·‚é*/
     Str[i-1] = (Str[i-2] == '=' ? 0 :'=');
 }
 //----------------------------------------------------------------------------------------------------
-/*æ¡ç®¡ç†*/
+/*Œ…ŠÇ—*/
 void NumSetup(int x,double *Num,int Time,int Flag,int DigitNum){
 	if(Flag == 0)
 		Num[Time] = Num[Time] * 10 + x;
@@ -26,30 +26,30 @@ void NumSetup(int x,double *Num,int Time,int Flag,int DigitNum){
     return;
 }
 //----------------------------------------------------------------------------------------------------
-/*æ³¨æ„æ›¸ã*/
+/*’ˆÓ‘‚«*/
 void CautionStatement(){
     printf("----------------------------------------------------------------------------------------------------\n");
-    printf("Rules for this calculator!\n\n");
-    printf("After entering the formula, enter '=' or push 'Ent'.\n\n");
-    printf("Available mathematical symbols : '+' , '-' , '*' , '/' , '!' , '^' \n");
-    printf("Examples : 1+1 , 1-1 , 1*1 , 1/1 , 1! , 1^1 \n\n");
+    printf("ŒvZ‹@‚Ìg—p•û–@\n\n");
+    printf("®‚ğ“ü—ÍŒã‚Í '='‚ğ“ü—Í‚·‚é‚©,'Ent'‚ğ‰Ÿ‚µ‚Ä‚­‚¾‚³‚¢B\n\n");
+    printf("g—p‚Å‚«‚é”®‹L† : '+' , '-' , '*' , '/' , '!' , '^' \n");
+    printf("—á : 1+1 , 1-1 , 1*1 , 1/1 , 1! , 1^1 \n\n");
 
-    printf("If you use a function, enter sin'deg' , s'deg' , cos'deg' , c'deg' , tan'deg' , t'deg'\n");
-    printf("However, the angle is limited to 0-360\n");
-    printf("Examples : sin30 , cos60 , tan45 , s30 , c60 , t45\n\n");
+    printf("g—p‚Å‚«‚éŠÖ” : sin'deg' , s'deg' , cos'deg' , c'deg' , tan'deg' , t'deg'\n");
+    printf("Šp“x‚Ì”ÍˆÍ§ŒÀ : 0-360 \n");
+    printf("—á : sin30 , cos60 , tan45 , s30 , c60 , t45\n\n");
 
-    printf("If you want to continue using the previous formula, enter '+', '-' , '*' and '/' instead of entering a number first.\n");
-    printf("Examples : +1 , -1 , *1 , /1\n\n");
+    printf("‘O‚Ì®‚ğˆø‚«‘±‚«g—p‚·‚éê‡‚Í '+', '-' , '*' ,'/'‚Ì‹L†‚©‚ç‹L“ü‚µ‚Ä‚­‚¾‚³‚¢B\n");
+    printf("—á : +1 , -1 , *1 , /1\n\n");
 
-    printf("Other functions.\n");
-    printf("Examples1 : sin45+cos45-tan45 *Four arithmetic operations of trigonometric functions.\n");
-    printf("Examples2 : 'H' or 'h' , 'history' , 'History' *View formulas and results history.\n");
-    printf("If you want to quit, enter 'end'\n");
+    printf("‚»‚Ì‘¼‚Ì‹@”\\n");
+    printf("—á1 : sin45+cos45-tan45 (OŠpŠÖ”‚Ìl‘¥‰‰Z)\n");
+    printf("—á2 : 'H' or 'h' , 'history' , 'History' ƒRƒ}ƒ“ƒh‚Å‰ß‹‚Ì”®/‰ğ‚ğŒ©‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B\n");
+    printf("I—¹‚·‚é‚Æ‚«‚É‚Í 'end' ‚Ü‚½‚Í 'e'‚Æ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B\n");
     printf("----------------------------------------------------------------------------------------------------\n");
     return;
 }
 //----------------------------------------------------------------------------------------------------
-/*ç©ºç™½ã‚’ãªãã—å¼ã‚’çŸ­ãã™ã‚‹*/
+/*‹ó”’‚ğ‚È‚­‚µ®‚ğ’Z‚­‚·‚é*/
 void Shorten(int *NumFlag, char *Sign, double *Num){
     for(int i = 0; ; i++){
         if(Sign[i] == '=')
